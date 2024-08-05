@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        canvas {
+            display: none;
+        }
+        #mainMenu, #scoreboard, #nameForm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainMenu" class="text-center">
+        <h1 class="mb-4">Snake Game</h1>
+        <p>High Score: <span id="highScore">0</span></p>
+        <button id="startGame" class="btn btn-primary mb-2">Start New Game</button>
+        <button id="showScoreboard" class="btn btn-secondary mb-2">Scoreboard</button>
+        <button id="exitApp" class="btn btn-danger">Exit App</button>
+    </div>
+    <div id="nameForm" class="text-center" style="display: none;">
+        <h2 class="mb-4">New High Score!</h2>
+        <p>Enter your name:</p>
+        <input type="text" id="playerName" class="form-control mb-2" />
+        <button id="submitName" class="btn btn-success">Submit</button>
+    </div>
+    <div id="scoreboard" class="text-center" style="display: none;">
+        <h2 class="mb-4">Scoreboard</h2>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Placement</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody id="scoreboardBody">
+            </tbody>
+        </table>
+        <button id="backToMenu" class="btn btn-primary">Back to Menu</button>
+    </div>
+    <canvas id="gameCanvas"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
